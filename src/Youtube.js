@@ -34,7 +34,6 @@ THE SOFTWARE. */
   'use strict';
 
   var Tech = videojs.getComponent('Tech');
-
   var Youtube = videojs.extend(Tech, {
 
     constructor: function(options, ready) {
@@ -545,6 +544,17 @@ THE SOFTWARE. */
         image.src = uri;
       }
       catch(e){}
+    },
+    getCurrentQuality: function() {
+        return this.ytPlayer.getPlaybackQuality();
+    },
+    getAvailablesQualities: function() {
+        return this.ytPlayer.getAvailableQualityLevels();
+    },
+    setQuality: function(quality) {
+        if(this.ytPlayer){
+            this.ytPlayer.setPlaybackQuality(quality);
+        }
     }
   });
 
