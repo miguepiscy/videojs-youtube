@@ -22,6 +22,7 @@ THE SOFTWARE. */
 /*global YT*/
 module.exports = function(videojs) {
   'use strict';
+
   var Tech = videojs.getComponent('Tech');
   var Youtube = videojs.extend(Tech, {
 
