@@ -19,20 +19,10 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE. */
-/*global define, YT*/
-(function (root, factory) {
-  if(typeof define === 'function' && define.amd) {
-    define(['video.js'], function(videojs){
-      return (root.Youtube = factory(videojs));
-    });
-  } else if(typeof module === 'object' && module.exports) {
-    module.exports = (root.Youtube = factory(require('video.js')));
-  } else {
-    root.Youtube = factory(root.videojs);
-  }
-}(this, function(videojs) {
+/*global YT*/
+module.exports = function(videojs) {
   'use strict';
-
+  console.log('llego');
   var Tech = videojs.getComponent('Tech');
   var Youtube = videojs.extend(Tech, {
 
@@ -637,4 +627,4 @@ THE SOFTWARE. */
   } else {
     videojs.registerComponent('Youtube', Youtube);
   }
-}));
+};
